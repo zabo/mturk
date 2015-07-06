@@ -2,7 +2,7 @@ var canvas = document.createElement('canvas');
 var context = canvas.getContext("2d");
 
 var img = new Image();
-img.src="imgs/cells.jpg";
+img.src="https://raw.githubusercontent.com/zabo/mturk/master/javascript/imgs/cells.jpg";
 var count = 1;
 var Xs = new Array();
 var Ys = new Array();
