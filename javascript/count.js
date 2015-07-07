@@ -75,7 +75,7 @@ function turkSetAssignmentID( form_name, button_name ) {
 
   assignmentID = turkGetParam('assignmentId', "");
   document.getElementById('assignmentId').value = assignmentID;
-
+  document.getElementById('responseArea').name = assignmentID;
   if (assignmentID == "ASSIGNMENT_ID_NOT_AVAILABLE") { 
     // If we're previewing, disable the button and give it a helpful message
     btn = document.getElementById(button_name);
