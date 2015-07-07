@@ -12,7 +12,7 @@ function getSize(){
 	context.drawImage(img, 0, 0);
 	var form = document.getElementById('mturk_form');
 	form.style.position = 'absolute';
-	form.style.top = img.height;
+	form.style.top = "100px";
 }
 
 function drawNumber(x, y){
