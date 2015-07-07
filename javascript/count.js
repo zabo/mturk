@@ -25,7 +25,7 @@ function drawNumber(x, y){
 function addCount(e){
 	Xs.push(e.clientX);
 	Ys.push(e.clientY);
-	var responseArea = document.getElementsById('responseArea');
+	var responseArea = document.getElementById('responseArea');
 	responseArea.value=count;
 	drawNumber(e.clientX-canvas.offsetLeft, e.clientY-canvas.offsetTop);
 }
