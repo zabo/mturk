@@ -10,6 +10,8 @@ function getSize(){
 	canvas.width = img.width;
 	canvas.height = img.height;
 	context.drawImage(img, 0, 0);
+	var form = document.getElementById('mturk_form');
+	form.style.top = 10+img.height;
 }
 
 function drawNumber(x, y){
