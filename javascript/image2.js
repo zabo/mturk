@@ -24,6 +24,8 @@ function draw(x, y){
 	context.moveTo(x, 0);
 	context.lineTo(x, canvas.height);
 	context.stroke();
+	var responseArea = document.getElementById('responseArea');
+	responseArea.value = "("+x","+y")";
 }
 
 function addPoint(e){

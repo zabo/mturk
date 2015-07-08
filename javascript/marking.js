@@ -21,9 +21,13 @@ function getSize(){
 function drawRects(){
 	canvas.width = canvas.width; //clear canvas
 	context.drawImage(img, 0, 0);
+	var responseArea = document.getElementById('responseArea');
+	responseArea.value = "[";
 	for(var i = 0; i<rectCount*2; i=i+2){
 		context.rect(Xs[i], Ys[i], Xs[i+1]-Xs[i], Ys[i+1]-Ys[i]);
+		responseArea.value = responseArea.value+"("+Xs[i] + "," + Ys[i] + "," + Xs[i+1] + "," Ys[i+1]+")";
 	}
+	responseArea.value = "]";
 	context.stroke();
 }
 
