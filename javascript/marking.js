@@ -27,7 +27,7 @@ function drawRects(){
 		context.rect(Xs[i], Ys[i], Xs[i+1]-Xs[i], Ys[i+1]-Ys[i]);
 		responseArea.value = responseArea.value+"("+Xs[i] + "," + Ys[i] + "," + Xs[i+1] + "," +Ys[i+1]+")";
 	}
-	responseArea.value = "]";
+	responseArea.value += "]";
 	context.stroke();
 }
 
