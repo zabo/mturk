@@ -8,6 +8,7 @@ var lastY = 0;
 var currentX;
 var currentY;
 var imageData;
+var slope = 0;
 function getSize(){
 	canvas.width = img.width;
 	canvas.height = img.height;
@@ -18,14 +19,15 @@ function getSize(){
 }
 
 function draw(x, y){
+	var h = y-(slope*x);
 	context.beginPath();
-	context.moveTo(0,y);
-	context.lineTo(canvas.width, y);
-	context.moveTo(x, 0);
-	context.lineTo(x, canvas.height);
+	context.moveTo(0,h);
+	context.lineTo(canvas.width, slope*canvas.width + h);
+	//context.moveTo(x, 0);
+	//context.lineTo(x, canvas.height);
 	context.stroke();
 	var responseArea = document.getElementById('responseArea');
-	responseArea.value = "("+x+","+y+")";
+	responseArea.value = "("+x+","+h+","+ slope + ")";
 }
 
 function addPoint(e){
@@ -109,6 +111,13 @@ canvas.style.zIndex = 8;
 canvas.style.position = "absolute";
 canvas.style.border = "1px solid";
 img.onload = getSize;
+var plusButton = document.createElement("Button");
+var plusButtonName = document.createTextNode("increase slope");
+plusButton.appendChild(plusButtonName);
+plusButton.addEventListener("click", function(){
+	slope +=0.1;
+}, false);
+document.body.appendChild(plusButton);
 canvas.addEventListener('click', addPoint, false);
 canvas.addEventListener('mousemove', follow, false);
 document.body.appendChild(canvas);
