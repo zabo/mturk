@@ -26,13 +26,14 @@ function drawLines(){
 	context.beginPath();
 	context.moveTo(Xs[0], Ys[0]);
 	var responseArea = document.getElementById('responseArea');
-	responseArea.value="[("+Xs[0] + "," + Ys[0]+")" ;
+	var response = "[("+Xs[0] + "," + Ys[0]+")" ;
 	for(var i = 1; i < nbPoints; ++i){
 		console.log("X: " + Xs[i] + ", Y: " + Ys[i]);
 		context.lineTo(Xs[i], Ys[i]);
-		responseArea.value=responseArea.value+"(" + Xs[i] + "," + Ys[i]")";
+		response+="("+ Xs[i] + "," + Ys[i] + ")";
+		console.log(response);
 	}
-	responseArea.value=responseArea.value+"]";
+	responseArea.value=response+"]";
 	context.stroke();
 }
 
