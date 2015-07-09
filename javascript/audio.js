@@ -1,5 +1,8 @@
 var player = document.createElement('audio');
 document.body.appendChild(player);
+var text = document.createElement('textArea');
+text.style.width="280px";
+document.body.appendChild(text);
 player.src = "audio/one.mp3";
 player.controls = true;
 player.style.width = "600px";
@@ -9,17 +12,31 @@ var passageBeginButton = document.createElement("Button");
 var beginButtonName = document.createTextNode("mark passage beginning");
 passageBeginButton.addEventListener("click", function(){
 	passageBeginning = player.currentTime;
-	alert(player.currentTime + "seconds");
+	updateValues();
 }, false);
 passageBeginButton.appendChild(beginButtonName);
 document.body.appendChild(passageBeginButton);
 
 var passageEndButton = document.createElement("Button");
 var endButtonName = document.createTextNode("mark passage end");
+
 passageEndButton.addEventListener("click", function(){
 	passageEnd = player.currentTime;
-	alert(player.currentTime + "seconds");
+	updateValues();
 }, false);
+
+var goToBeginning = document.createElement("Button");
+var gotToButtonName = document.createTextNode("Go to passage Beginning");
+goToBeginning.appendChild(gotToButtonName);
+goToBeginning.addEventListener("click", function(){
+  player.currentTime = passageBeginning;
+}, false);
+document.body.appendChild(goToBeginning);
+
+function updateValues(){
+	text.value = "passage begins at " + passageBeginning + "seconds and ends at " + passageEnd + "seconds.";
+}
+
 /**
  * Gets a URL parameter from the query string
  */
