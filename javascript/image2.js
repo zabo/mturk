@@ -117,7 +117,15 @@ plusButton.appendChild(plusButtonName);
 plusButton.addEventListener("click", function(){
 	slope +=0.1;
 }, false);
+
+var minusButton = document.createElement("Button");
+var minusButtonName = document.createTextNode("decrease slope");
+minusButton.appendChild(minusButtonName);
+minusButton.addEventListener("click", function(){
+	slope -=0.1;
+}, false);
 document.body.appendChild(plusButton);
+document.body.appendChild(minusButton);
 canvas.addEventListener('click', addPoint, false);
 canvas.addEventListener('mousemove', follow, false);
 document.body.appendChild(canvas);
