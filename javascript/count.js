@@ -2,7 +2,7 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext("2d");
 
 var img = new Image();
-img.src="https://rawgit.com/zabo/mturk/master/javascript/imgs/cells.jpg";
+img.src=canvas.name;
 var count = 1;
 var Xs = new Array();
 var Ys = new Array();
@@ -96,4 +96,6 @@ canvas.style.position = "absolute";
 canvas.style.border = "1px solid";
 img.onload = getSize;
 canvas.addEventListener('click', addCount, false);
+val instruction = document.getElementById('instruction');
+instruction.value = "To use this tool, simply click on every required elements you see to mark and count them. Once every element is counted, click on submit."
 document.body.appendChild(canvas);
